@@ -1,0 +1,24 @@
+{
+  "name": "@WeCareALOT/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@WeCareALOT/db": "workspace:*",
+    "@WeCareALOT/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@WeCareALOT/config": "workspace:*",
+    "typescript": "^5"
+  }
+}

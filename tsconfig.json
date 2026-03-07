@@ -1,0 +1,3 @@
+{
+  "extends": "@WeCareALOT/config/tsconfig.base.json"
+}
