@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 150">
+  <defs>
+    <linearGradient id="handGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFB366"/>
+      <stop offset="100%" stop-color="#E8944D"/>
+    </linearGradient>
+  </defs>
+  <!-- Palm -->
+  <path d="M45,130 Q30,100 35,70 Q38,55 50,50 L55,35 Q58,25 65,28 L67,45 L70,25 Q73,15 80,18 L80,45 L85,22 Q88,12 95,16 L92,50 L98,30 Q102,22 108,28 L100,65 Q115,60 118,68 Q120,75 105,80 L95,85 Q100,110 85,130 Z" fill="url(#handGrad)" stroke="#D4884A" stroke-width="1.5"/>
+</svg>

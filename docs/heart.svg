@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <radialGradient id="heartGlow" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="100%" stop-color="#E63946"/>
+    </radialGradient>
+  </defs>
+  <path d="M40,70 C15,50 5,35 5,22 C5,12 13,5 23,5 C30,5 36,9 40,15 C44,9 50,5 57,5 C67,5 75,12 75,22 C75,35 65,50 40,70 Z" fill="url(#heartGlow)"/>
+</svg>
