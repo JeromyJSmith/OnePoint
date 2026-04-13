@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <title>OnePoint | Client Brief</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --surface-soft: #f2f4ff;
+      --text: #182031;
+      --muted: #556079;
+      --line: #d9deeb;
+      --accent: #3f6fff;
+      --accent-soft: #e8eeff;
+      --good: #0d8a57;
+      --warn: #a86a00;
+      --shadow: 0 8px 30px rgba(24, 32, 49, 0.08);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1118;
+        --surface: #161b26;
+        --surface-soft: #1c2332;
+        --text: #e7ecff;
+        --muted: #a6b0cc;
+        --line: #2a3145;
+        --accent: #7f9cff;
+        --accent-soft: #1b2540;
+        --good: #4fd39b;
+        --warn: #f6b04e;
+        --shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    .hero {
+      background: linear-gradient(140deg, var(--surface), var(--surface-soft));
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      margin-bottom: 10px;
+    }
+
+    h1, h2, h3 {
+      margin: 0 0 10px;
+      line-height: 1.25;
+    }
+
+    h1 { font-size: clamp(28px, 5vw, 42px); }
+    h2 { font-size: clamp(22px, 3.4vw, 30px); margin-top: 28px; }
+    h3 { font-size: 18px; }
+
+    p { margin: 0 0 12px; color: var(--text); }
+    .muted { color: var(--muted); }
+    .lead { font-size: 18px; max-width: 78ch; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .kpi { grid-column: span 3; }
+    .kpi .value {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+    .kpi .label { font-size: 13px; color: var(--muted); }
+
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+
+    ul { margin: 10px 0 0; padding-left: 18px; }
+    li { margin: 6px 0; }
+
+    .pill {
+      display: inline-block;
+      font-size: 12px;
+      border-radius: 999px;
+      padding: 3px 9px;
+      border: 1px solid var(--line);
+      margin-right: 6px;
+      margin-bottom: 6px;
+      color: var(--muted);
+      background: var(--surface-soft);
+    }
+
+    .good { color: var(--good); font-weight: 700; }
+    .warn { color: var(--warn); font-weight: 700; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      padding: 10px 8px;
+      vertical-align: top;
+    }
+    th { color: var(--muted); font-weight: 700; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+    details {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--surface);
+      padding: 10px 12px;
+      margin-top: 10px;
+    }
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .footer {
+      margin-top: 26px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .kpi, .col-4, .col-6, .col-8 { grid-column: span 12; }
+      .wrap { padding: 16px 12px 32px; }
+      .hero { padding: 18px; border-radius: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="eyebrow">Client Brief · OnePoint</span>
+      <h1>A Better Way to Coordinate Care and Fill Rooms</h1>
+      <p class="lead">
+        OnePoint is a voice-first care coordination platform for families and small assisted-living operators.
+        It replaces scattered texts and spreadsheets with one shared timeline, then bridges directly into placement workflow.
+      </p>
+      <p class="muted">
+        Built for real-world use: mixed-tech families, low-friction access, legal-grade logs, and practical operations for single-facility teams.
+      </p>
+      <div class="grid">
+        <article class="card kpi">
+          <div class="value">30s</div>
+          <div class="label">Target time to log a shift note</div>
+        </article>
+        <article class="card kpi">
+          <div class="value">5 Gaps</div>
+          <div class="label">Clear market gaps OnePoint fills</div>
+        </article>
+        <article class="card kpi">
+          <div class="value">16+</div>
+          <div class="label">Competitors deeply analyzed</div>
+        </article>
+        <article class="card kpi">
+          <div class="value">1 Record</div>
+          <div class="label">Prospect to resident with no re-entry</div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why This Matters Now</h2>
+      <div class="grid">
+        <article class="card col-6">
+          <h3>Current reality for teams</h3>
+          <ul>
+            <li>Care updates live in group texts, memory, and ad hoc notes.</li>
+            <li>Shift handoffs are inconsistent and hard to audit later.</li>
+            <li>Low-tech family members are often excluded from the loop.</li>
+            <li>Small operators are over-served by enterprise systems and under-served by consumer apps.</li>
+          </ul>
+        </article>
+        <article class="card col-6">
+          <h3>What OnePoint changes</h3>
+          <ul>
+            <li>Tap, talk, save: voice capture becomes a structured timeline entry.</li>
+            <li>One shared web surface for all family members, including low-tech users.</li>
+            <li>Timestamped, attributed exports for legal/risk documentation.</li>
+            <li>Placement pipeline connects to care record at move-in without duplicate data entry.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>MVP Scope (What We Are Building First)</h2>
+      <div class="grid">
+        <article class="card col-8">
+          <p class="muted">Focused execution for immediate value:</p>
+          <ul>
+            <li><strong>Voice-first logging:</strong> record and transcribe shift notes.</li>
+            <li><strong>Shared timeline:</strong> everyone sees the same updates by recipient/date.</li>
+            <li><strong>On-duty + handoff:</strong> clear ownership per shift.</li>
+            <li><strong>Web-first access:</strong> no-install link for low-tech users.</li>
+            <li><strong>Legal export:</strong> chronological, timestamped, attributed records.</li>
+            <li><strong>Spreadsheet backfill:</strong> one-time import to preserve history.</li>
+          </ul>
+        </article>
+        <article class="card col-4">
+          <h3>Explicitly Later</h3>
+          <span class="pill">Full EHR integrations</span>
+          <span class="pill">Wearables</span>
+          <span class="pill">Built-in video</span>
+          <span class="pill">Advanced AI research automation</span>
+          <span class="pill">Broad enterprise workflows</span>
+          <p class="muted" style="margin-top:10px;">
+            This keeps v0 fast, useful, and adoption-focused.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Market Insight: The Gap OnePoint Owns</h2>
+      <article class="card">
+        <p>
+          The market splits into two camps:
+          <span class="warn">family caregiver apps</span> (easy but light on rigor)
+          and <span class="warn">enterprise senior-living systems</span> (powerful but heavy and expensive).
+          OnePoint sits in the under-served middle: practical, voice-first, low-friction, and operationally useful.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Examples</th>
+              <th>What They Do Well</th>
+              <th>Where They Miss</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Family Coordination</td>
+              <td>CaringBridge, Lotsa Helping Hands, Ianacare, CircleOf, CareTree</td>
+              <td>Task sharing, updates, broad accessibility</td>
+              <td>No strong placement pipeline, weak legal-grade record rigor, limited voice-first workflows</td>
+            </tr>
+            <tr>
+              <td>Senior Living CRM / Ops</td>
+              <td>Aline, Yardi, Sherpa, Enquire, ECP, MatrixCare</td>
+              <td>Pipeline, occupancy, enterprise compliance workflows</td>
+              <td>Heavy onboarding, not designed for low-tech family access, weak "talk-and-log" simplicity</td>
+            </tr>
+            <tr>
+              <td>Lead Marketplaces</td>
+              <td>A Place for Mom, Caring.com, SeniorAdvisor</td>
+              <td>Top-of-funnel lead generation</td>
+              <td>Not a continuous care record; weak continuity after move-in</td>
+            </tr>
+            <tr>
+              <td><strong>OnePoint (Target)</strong></td>
+              <td><strong>Voice-first + family + placement bridge</strong></td>
+              <td><span class="good">Unified timeline from intake to ongoing care</span></td>
+              <td><span class="good">Built specifically for this blended workflow</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section>
+      <h2>Top 5 Strategic Advantages</h2>
+      <div class="grid">
+        <article class="card col-6">
+          <h3>1) Voice-first in real conditions</h3>
+          <p>Caregivers can log while actively providing care. Minimal interaction, maximum capture fidelity.</p>
+        </article>
+        <article class="card col-6">
+          <h3>2) Low-tech family inclusion</h3>
+          <p>Simple link-based web access means no install barrier for skeptical or less technical relatives.</p>
+        </article>
+        <article class="card col-6">
+          <h3>3) Legal-grade chronology</h3>
+          <p>Every entry is attributed and timestamped, making records practical for legal/risk review.</p>
+        </article>
+        <article class="card col-6">
+          <h3>4) Placement-to-care continuity</h3>
+          <p>Prospect data transitions to resident care record without duplicate admin work.</p>
+        </article>
+        <article class="card col-12">
+          <h3>5) Single-facility friendly economics</h3>
+          <p>Positioned for owner-operators and small teams who are currently underserved by enterprise-first software.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Execution Plan Snapshot</h2>
+      <div class="grid">
+        <article class="card col-4">
+          <h3>Week 1</h3>
+          <ul>
+            <li>Voice capture working end-to-end</li>
+            <li>Shared timeline live</li>
+            <li>On-duty + handoff visible</li>
+          </ul>
+        </article>
+        <article class="card col-4">
+          <h3>Week 2</h3>
+          <ul>
+            <li>Export for legal/history usage</li>
+            <li>Spreadsheet backfill</li>
+            <li>Reliability + edge-case fixes</li>
+          </ul>
+        </article>
+        <article class="card col-4">
+          <h3>Weeks 3-4</h3>
+          <ul>
+            <li>Placement intake and fit scoring</li>
+            <li>Move-in handoff continuity</li>
+            <li>Client-facing polish + validation</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Evidence Notes (Research Backing)</h2>
+      <details open>
+        <summary>Research files used in this brief</summary>
+        <ul>
+          <li><code>research/20_competitor_matrix.md</code></li>
+          <li><code>research/21_review_intelligence.md</code></li>
+          <li><code>research/30_gap_analysis.md</code></li>
+          <li><code>research/31_ai_advantage.md</code></li>
+          <li><code>research/40_system_architecture.md</code></li>
+          <li><code>research/50_onepoint_strategy.md</code></li>
+          <li><code>OnePoint_PRD_MVP.md</code> and <code>OnePoint.plan.md</code></li>
+        </ul>
+      </details>
+      <details>
+        <summary>Tone and audience guidance</summary>
+        <p class="muted">
+          This document is intentionally client-facing and plain-language. It focuses on strategic clarity and confidence,
+          while preserving factual grounding from the internal research stack.
+        </p>
+      </details>
+    </section>
+
+    <p class="footer">
+      OnePoint · Client Brief · Last updated 2026-04-13
+    </p>
+  </main>
+</body>
+</html>

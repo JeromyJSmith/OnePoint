@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <title>OnePoint | What We Are Building Now</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --bg-soft: #111827;
+      --card: #151d2e;
+      --card-2: #1b253a;
+      --text: #edf2ff;
+      --muted: #aeb9d6;
+      --line: #2b3754;
+      --accent: #7da0ff;
+      --accent-2: #5eead4;
+      --good: #56d89a;
+      --warn: #f5b66c;
+      --danger: #ff8f8f;
+      --shadow: 0 14px 34px rgba(0, 0, 0, 0.34);
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f5f7ff;
+        --bg-soft: #eef2ff;
+        --card: #ffffff;
+        --card-2: #f7f9ff;
+        --text: #12192b;
+        --muted: #526180;
+        --line: #d7dff0;
+        --accent: #3f67ff;
+        --accent-2: #0ea5a5;
+        --good: #0f9f63;
+        --warn: #c77d19;
+        --danger: #d14b4b;
+        --shadow: 0 14px 34px rgba(36, 49, 82, 0.12);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(1200px 500px at 10% -10%, rgba(125, 160, 255, 0.22), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(94, 234, 212, 0.16), transparent 55%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .wrap {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 24px 16px 44px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: linear-gradient(145deg, var(--card), var(--card-2));
+      padding: 24px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: rgba(125, 160, 255, 0.1);
+      margin-bottom: 12px;
+    }
+
+    h1, h2, h3 { margin: 0 0 10px; line-height: 1.25; }
+    h1 { font-size: clamp(28px, 5.2vw, 46px); }
+    h2 { font-size: clamp(22px, 3.6vw, 32px); margin-top: 24px; }
+    h3 { font-size: 18px; }
+    p { margin: 0 0 12px; }
+    .muted { color: var(--muted); }
+    .lead { font-size: 18px; max-width: 72ch; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--card);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .col-12 { grid-column: span 12; }
+    .col-8 { grid-column: span 8; }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-3 { grid-column: span 3; }
+
+    .kpi .value { font-size: 28px; font-weight: 800; margin-bottom: 2px; }
+    .kpi .label { font-size: 13px; color: var(--muted); }
+
+    ul { margin: 8px 0 0; padding-left: 18px; }
+    li { margin: 6px 0; }
+
+    .ok { color: var(--good); font-weight: 700; }
+    .next { color: var(--warn); font-weight: 700; }
+    .risk { color: var(--danger); font-weight: 700; }
+
+    .step {
+      border-left: 3px solid var(--accent);
+      padding-left: 12px;
+      margin: 12px 0 0;
+    }
+
+    .chips { margin-top: 8px; }
+    .chip {
+      display: inline-block;
+      margin: 0 6px 6px 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      background: var(--bg-soft);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      padding: 10px 8px;
+      vertical-align: top;
+    }
+    th {
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footnote {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 960px) {
+      .col-8, .col-6, .col-4, .col-3 { grid-column: span 12; }
+      .hero { padding: 18px; border-radius: 14px; }
+      .wrap { padding: 14px 12px 30px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge">OnePoint · Build Story</span>
+      <h1>Yes — We Know Exactly What We Are Building</h1>
+      <p class="lead">
+        WeCareALOT was round one: foundation and infrastructure. OnePoint is round two: the usable product workflow
+        (voice log → timeline → handoff → export → placement continuity).
+      </p>
+      <p class="muted">
+        This is not "exploring ideas." This is a defined execution track with clear weekly deliverables.
+      </p>
+      <div class="grid">
+        <article class="card kpi col-3">
+          <div class="value">Round 1</div>
+          <div class="label">Auth, DB, API, seed data, landing built</div>
+        </article>
+        <article class="card kpi col-3">
+          <div class="value">30+</div>
+          <div class="label">API endpoints already available</div>
+        </article>
+        <article class="card kpi col-3">
+          <div class="value">19</div>
+          <div class="label">Competitors analyzed in depth</div>
+        </article>
+        <article class="card kpi col-3">
+          <div class="value">Week 1-5</div>
+          <div class="label">Current build plan is concrete</div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Was Built in Round 1 (WeCareALOT)</h2>
+      <div class="grid">
+        <article class="card col-6">
+          <h3 class="ok">Completed Foundation</h3>
+          <ul>
+            <li>Role-based auth and session model (family admin + caregiver roles).</li>
+            <li>Production-ready schema for patients, meds, vitals, observations, assignments, audit log.</li>
+            <li>Type-safe API layer and client wiring.</li>
+            <li>Seed data for Connie and care team demo workflows.</li>
+            <li>Login/signup UX and live landing experience.</li>
+          </ul>
+        </article>
+        <article class="card col-6">
+          <h3 class="next">What Is Not Built Yet</h3>
+          <ul>
+            <li>Patient dashboard experience (currently shell only).</li>
+            <li>Voice-to-structured-record flow.</li>
+            <li>AI handoff briefings and AI note summarization.</li>
+            <li>Low-tech-family optimized operations view.</li>
+            <li>Placement-to-care continuity workflow.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>What We Are Building Now (Round 2)</h2>
+      <div class="grid">
+        <article class="card col-8">
+          <h3>The Core Product Loop</h3>
+          <div class="step"><strong>Step 1:</strong> Caregiver records a voice note after (or during) shift activity.</div>
+          <div class="step"><strong>Step 2:</strong> System converts speech into structured records (vitals, meds, observations, notes).</div>
+          <div class="step"><strong>Step 3:</strong> Team sees a clean, shared timeline and current on-duty context.</div>
+          <div class="step"><strong>Step 4:</strong> AI generates shift handoff briefing with critical alerts + pending tasks.</div>
+          <div class="step"><strong>Step 5:</strong> Export is available for legal/risk review and operational history.</div>
+          <div class="step"><strong>Step 6:</strong> Placement intake can transition into ongoing care record without duplicate entry.</div>
+        </article>
+        <article class="card col-4">
+          <h3>Design Principles</h3>
+          <div class="chips">
+            <span class="chip">Voice-first</span>
+            <span class="chip">Mobile-first</span>
+            <span class="chip">Low-tech inclusive</span>
+            <span class="chip">Legally defensible logs</span>
+            <span class="chip">Single source of truth</span>
+            <span class="chip">No duplicate entry</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Execution Plan (Next 5 Weeks)</h2>
+      <div class="grid">
+        <article class="card col-4">
+          <h3>Week 1</h3>
+          <ul>
+            <li>Patient list + patient detail pages</li>
+            <li>Role-aware navigation</li>
+            <li>Dashboard shell replaced with usable views</li>
+          </ul>
+        </article>
+        <article class="card col-4">
+          <h3>Week 2</h3>
+          <ul>
+            <li>Vitals logging + trend visualization</li>
+            <li>Medication schedule + intake logging</li>
+            <li>Missed-dose visibility</li>
+          </ul>
+        </article>
+        <article class="card col-4">
+          <h3>Week 3</h3>
+          <ul>
+            <li>Observation/incident workflow</li>
+            <li>AI handoff briefing route</li>
+            <li>AI note summarization route</li>
+          </ul>
+        </article>
+        <article class="card col-6">
+          <h3>Week 4</h3>
+          <ul>
+            <li>Voice recording component</li>
+            <li>Speech transcription + Claude extraction</li>
+            <li>Voice-to-multiple-records confirmation flow</li>
+          </ul>
+        </article>
+        <article class="card col-6">
+          <h3>Week 5</h3>
+          <ul>
+            <li>Caregiver "Today" portal and quick actions</li>
+            <li>Admin user/role and audit visibility</li>
+            <li>Mobile polish + production hardening</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Competitive Positioning (Client-Relevant)</h2>
+      <article class="card">
+        <table>
+          <thead>
+            <tr>
+              <th>Market Type</th>
+              <th>Typical Tools</th>
+              <th>Main Weakness</th>
+              <th>OnePoint Position</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Family caregiver apps</td>
+              <td>CaringBridge, Lotsa, Ianacare, CircleOf</td>
+              <td>Good updates, weak structured workflows, no placement continuity</td>
+              <td><span class="ok">Add structure + operational handoff + legal export</span></td>
+            </tr>
+            <tr>
+              <td>Enterprise senior-living suites</td>
+              <td>Aline, Yardi, ECP, Sherpa</td>
+              <td>Complex, costly, not optimized for low-tech families</td>
+              <td><span class="ok">Single-facility and family-inclusive by design</span></td>
+            </tr>
+            <tr>
+              <td>Lead marketplaces</td>
+              <td>A Place for Mom, Caring.com, SeniorAdvisor</td>
+              <td>Top-of-funnel only; weak post-move continuity</td>
+              <td><span class="ok">Prospect-to-resident continuity in one record</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </article>
+    </section>
+
+    <section>
+      <h2>What Makes This Exciting</h2>
+      <div class="grid">
+        <article class="card col-6">
+          <h3>For Care Teams</h3>
+          <ul>
+            <li>Less admin overhead, faster capture, clearer shift transitions.</li>
+            <li>Practical support for mixed-technology family groups.</li>
+            <li>A timeline that can actually be used during real stress.</li>
+          </ul>
+        </article>
+        <article class="card col-6">
+          <h3>For Operators</h3>
+          <ul>
+            <li>Placement and care no longer live in disconnected systems.</li>
+            <li>Better operational visibility and fewer dropped details.</li>
+            <li>A product shape that fits owner-operators, not just chains.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reality Check</h2>
+      <article class="card">
+        <p><strong>Do we know what we're building?</strong> <span class="ok">Yes.</span></p>
+        <p>
+          Round one built the platform foundation. Round two is execution of a very specific product loop:
+          <strong>voice capture, structured logging, shared timeline, handoff intelligence, legal export, and continuity into placement/care operations.</strong>
+        </p>
+        <p class="muted">
+          This document reflects the current build plan, not a speculative vision deck.
+        </p>
+      </article>
+    </section>
+
+    <p class="footnote">
+      Source basis: WeCareALOT handoff + development plan + architecture/market research files in this workspace.
+    </p>
+  </main>
+</body>
+</html>
